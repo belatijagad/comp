@@ -1,0 +1,10 @@
+# Apply alongside compose.yaml to expose NVIDIA GPUs to the same image.
+services:
+  lab:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
